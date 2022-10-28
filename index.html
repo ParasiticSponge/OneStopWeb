@@ -1,15 +1,143 @@
-<!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<body style="margin: 0px; overflow: hidden">
-  <a-scene embedded arjs="sourceType: webcam;">
-    <a-assets>
-      <!-- id=“file name“ src=“file url" -->
-      <a-asset-item id="Digi_Cam" src="models/Digi_Cam.gltf"></a-asset-item>
-    </a-assets>
-    <!-- scale values allow you to adjust the file’s display size, gltf-model=“#your file name“ -->
-    <a-entity scale="0.125 0.125 0.125" gltf-model="#Digi_Cam"></a-entity>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+  <title>Welcome to Elektrik Eel</title>
+  <link rel="stylesheet" href="https://use.typekit.net/rkr7cqj.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/audio.css">
+  <link rel="stylesheet" href="css/artists.css">
 
-    <a-marker-camera preset="hiro"></a-marker-camera>
-  </a-scene>
+  <script src="https://kit.fontawesome.com/53a478a28d.js" crossorigin="anonymous"></script> <!-- script to retrieve burger menu icon fron website -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- JQuery -->
+  <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script> --> <!-- JQuery Mobile -->
+  <script type="text/javascript" src="javascript/slide.js"></script>
+
+</head>
+<body>
+  <header>
+    <section class="header_items">
+      <img class="logo" src="images/icons/oneStop.png" alt="Elektrik Eel Logo">
+
+      <div class="icons">
+        <input class="inputsearch" type="text" placeholder="Search...">
+        <button id="search" type="submit"><i class="fa fa-search"></i></button>
+
+        <a href="index.html"><img class="home" src="images/icons/home.png" alt="Home"></a>
+        <a href="https://www.instagram.com/q_dance/?hl=en"><img class="cart" src="images/icons/cart.png" alt="Shopping Cart"></a>
+        <a href="https://twitter.com/Q_dance?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img class="wish" src="images/icons/heart.png" alt="Wishlist"></a>
+        <a href="https://www.youtube.com/channel/UCAEwCfBRlB3jIY9whEfSP5Q"><img class="sign" src="images/icons/user.png" alt="Sign-in/Sign-up"></a>
+      </div>
+    </section>
+  </header>
+  <nav>
+    <a href="#"><i class="fas fa-bars"></i></a>
+    <!-- use this for multiple links in emmet -->
+    <!-- a[href="#"]{home}*4 -->
+    <a href="index.html">Christmas</a>
+    <a href="#">Halloween</a>
+    <a href="artists.html">Home & Living</a>
+    <a href="#">Womens</a>
+    <a href="#">Mens</a>
+    <a href="#">Kids & Babies</a>
+    <a href="#">Toys</a>
+    <a href="#">Beauty</a>
+    <a href="#">Sports & Outdoor</a>
+    <a href="#">Tech</a>
+  </nav>
+
+  <button onclick="topFunction()" id="ScrollTop" title="Go to top">^</button> <!-- button that scrolls back to top when page has been scrolled down -->
+
+  <div class="content">
+
+    <section class="artists-pane"> <!-- setup a picture slideshow to view attending artists -->
+      <div class='slideshow'> <!-- contain all of the content and custom arrows in one box -->
+
+        <input checked='checked' class='pane' id='pane1' name='slideshow' type='radio'>
+        <!-- setup the first slide in the slideshow, the slides are setup as radio buttons so the class 'checked' detects which pane the user is on when the arrows are pressed -->
+        <input class='pane' id='pane2' name='slideshow' type='radio'> <!-- setup the second slide -->
+        <input class='pane' id='pane3' name='slideshow' type='radio'> <!-- setup the third slide -->
+
+        <div class='carousel-controls'> <!-- setup custom controls for the movement arrows and content-->
+          <label class='carousel-control forward' for='pane2'> <!-- setup forward arrow label to switch panes when viewing first pane-->
+            > <!-- These arrows are used as labels in the slideshow to create the forwards and backwards arrows -->
+          </label>
+        </div>
+        <div class='carousel-controls'> <!-- the class 'carousel is an inbuilt bootstrap function that tells html
+        the div contains a sliding animation. The 'contrtols' part tell html the labels being used are the buttons for left and right (or forwards and backwards) -->
+          <label class='carousel-control backward' for='pane1'> <!-- setup backward arrow label when user slides to the next pane and want to go back to the first one-->
+            <!-- the expression 'for' is used to assign attributes to an id tag, so that the label is used as an event which means "if this arrow is clicked it will result in the following" -->
+            <!-- it is also fine to add a second label in the same class attribute to distinguish visually between the forward and backward control arrows -->
+            <
+          </label>
+          <label class='carousel-control forward' for='pane3'> <!-- must recreate the forwards arrow when updating slideshow to view the second pane-->
+            > <!-- These arrows are used as labels in the slideshow to create the forwards and backwards arrows -->
+          </label>
+        </div>
+        <div class='carousel-controls'>
+          <label class='carousel-control backward' for='pane2'> <!-- recreate backward arrow when user slides to last pane, don't need another forwards arrow if there are no more panes left to update -->
+            <
+          </label>
+        </div>
+
+        <div class='carousel__screen'> <!-- the carousel-screen shows only 3 images at a time in a panel so that any overflowing images are hidden -->
+          <h1><a href="index.html">Featured Items</a></h1>
+          <div class='carousel__track'> <!-- the carousel-track enables moving animation from one panel to the next, like a track, fading out the last 3 panels -->
+            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+              <div class='contents'>
+                <img src="images/featured/digicam_0001.png">
+                <h4>AUD $59.99 </h4>
+                <a href="window.html"><button>View in AR</button></a>
+              </div>
+            </div>
+            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+              <div class='contents'>
+              </div>
+            </div>
+            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+              <div class='contents'>
+              </div>
+            </div>
+            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+              <div class='contents'>
+              </div>
+            </div>
+            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+              <div class='contents'>
+              </div>
+            </div>
+            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+              <div class='contents'>
+              </div> <!-- closes the contents class -->
+            </div> <!-- closes the carousel item, carousel item mobile class -->
+          </div> <!-- closes the carousel track class -->
+        </div> <!-- closes the carousel class -->
+      </div> <!-- closes the slideshow div -->
+    </section> <!-- closes the section tag -->
+
+    <div class="articles-bottom"> <!-- Google map iframe -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2432.1556033972406!2d5.760477415693876!3d52.44009597979918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7d318ca807bbf%3A0xd1104187b7b2cf6f!2sWalibi%20Holland!5e0!3m2!1sen!2sau!4v1618800409986!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <!-- <artcile></artcile> -->
+    </div>
+  </div> <!-- closes content tag-->
+
+  <!-- <div class="audio">       <<<<<<<<<<<**DEFAULT audio tag
+    <audio controls>
+      <source src="audio/Dizzy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio> -->
+
+  <footer>
+  <h6>&copy; copyright 2020 Elektrik Eel</h6>
+  </footer>
+
+  <script type="text/javascript" src="javascript/scroll.js"></script>
+
 </body>
+</html>

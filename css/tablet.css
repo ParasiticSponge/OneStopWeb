@@ -1,0 +1,151 @@
+@media screen and (min-width: 600px){
+
+  html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  h2{
+    top: 35%;
+    left: 20%;
+    margin-top: 80px;
+    width: 280px;
+  }
+
+  h3{
+    font-size: 46px;
+  }
+
+  h4{
+    font-size: 30px;
+  }
+
+  h5{
+    font-size: 20px;
+  }
+
+  h6{
+    font-size: 18px;
+  }
+
+
+  p, .articles article p{
+    font-size: 20px;
+  }
+
+  .articles p{
+    font-size: 21px;
+  }
+
+  header{
+    height: 200px;
+  }
+
+  .banner{
+    display: flex;
+  }
+
+  .banner img{
+    width: inherit;
+    height: inherit;
+  }
+
+  nav{
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;   /* if menu items need to be aligned horizontally */
+  }
+  nav a{
+    width: 100%;
+    height: 100%;
+    margin: 1px;
+    flex: 1;
+  }
+
+  .logo{
+    left: 5%;
+    /* left 5% of the screen width. */
+    top: 15%;
+  }
+
+  .icons{
+    position: absolute;
+    left: 1%;
+    top: 2%;
+  }
+
+  #buy_tickets{
+    left: 2%;
+    top: 50%;
+  }
+
+  header form{
+    position: absolute;
+    bottom: 20px; /* 20 pixels from the bottom of the header */
+    left: 1.5%;
+    display: flex;
+    width: 400px;
+    height: 50px;
+    padding: 2px;
+    background-color: rgba(128, 231, 242, 0.5);
+  }
+
+  header form button{
+    width: 100px;
+  }
+
+  header form button:hover{
+    cursor: pointer;
+  }
+
+  .articles{
+    width: 90%;
+    flex-direction: row;
+  }
+  .articles article{
+    margin: 5px;
+    min-height: 490px;
+    border-radius: 25px;
+  }
+
+@media screen and (max-width: 1024px){ /* change the way the search button is presented but only apply to tablet mode */
+  input.inputsearch[type=text] {
+    width: 100%;
+  }
+  #search{
+    width: 20%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    margin: 0 auto;
+  }
+}
+  button {
+    width: 50px;
+  }
+
+  @media screen and (max-width: 600px) {
+    /* if the screen is bigger than 600 do this */
+    /* max width is used for mobile devices */
+    nav, input[type=text], button {
+      float: none;
+    }
+
+    nav, input[type=text], button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+
+    input[type=text] {
+      border: 1px solid white;
+    }
+  }
+}

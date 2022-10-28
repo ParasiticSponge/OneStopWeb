@@ -1,0 +1,382 @@
+@font-face {
+  font-family: museo-slab;
+  src: url(fonts/Museo-Slab-300.otf) format(opentype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: museo-sans;
+  src: url(fonts/Museo-Sans.otf) format(opentype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, ::before{
+  box-sizing: border-box;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #b8d2f5;
+}
+
+h1{
+  padding: 0;
+  margin: 0;
+  font-family: museo-slab, serif;
+  font-weight: 500;
+  font-style: italic;
+  padding: 0 15px;
+  margin: 5px 0 30px 0;
+}
+
+h2{
+  font-family: museo-slab, serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 22px;
+  color: #ffffff;
+  position: absolute;
+  top: 39%;
+  left: 50%;
+  margin-left: -140px;
+  margin-top: 60px;
+  z-index: 300;
+  display: block;
+  width: 300px;
+  height: 60px;
+  padding: 15px 8px;
+}
+
+h3{
+  font-family: museo-slab, serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 34.5px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+h4{
+  color: black;
+  font-family: museo-slab, serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 20px;
+  padding: 0 15px;
+  margin: 5px 0 30px 0;
+}
+
+h5{
+  font-family: museo-sans, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 18px;
+  padding: 0 15px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+h6{
+  font-family: museo-sans, sans-serif;
+  font-weight: 500px;
+  font-size: 13.5px;
+  color: #fff;
+}
+
+
+p, .articles article p{
+  font-family: museo-sans, serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.articles p{
+  font-size: 20px;
+  padding: 0 15px;
+}
+
+.elektrik{
+  font-weight: 500;
+  color: #ff14be;
+}
+
+.blur{
+  color: #ff14be;
+}
+
+.carousel__item:nth-child(1) .contents img { /* controls just the first child flex item in artists' pane */
+  filter: blur(0) brightness(1) hue-rotate(0);
+}
+
+.carousel__item .contents img { /* controls all images in artists' pane */
+  filter: brightness(1) hue-rotate(0);
+}
+
+header{
+/* header.nth-child[#number]{} */
+/*target specific child roots in parent root */
+  width: 100%;
+  height: 200px;
+  background-color: #004bad;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+nav{
+  width: 100%;
+  height: 62px;
+  background-color: #ffffff;
+  position: initial; /* initial instead of absolute pushes items down when nav is opened */
+  z-index: 10;
+  display: block; /* move items to columns instead of flex */
+  flex-direction: column;
+  overflow: hidden; /* hide items that go beyond block settings */
+  align-items: flex-start;   /* if menu items need to be aligned horizontally */
+  background-color: #004bad;
+  transition: 0.5s; /* transition for burger menu */
+  border-top: 2px solid white;
+}
+
+nav a{
+  font-family: museo-sans, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.5em; /* set it to 150% its original size */
+  /* set font size to 1em in tablet and desktop */
+  text-transform: uppercase;
+  margin: 2px;
+  background-color: #004bad;  /* If I want my links be be a box */
+  padding: 8px; /* If I want my links to be a box */
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  justify-content: center; /* align content horizontally centered */
+  align-items: center; /* align content vertically centered */
+  flex: auto;
+  height: 44px; /* since burger menu is being layed out as colums, the height needs to increase */
+  /* add auto height to tablet and desktop to overide mobile settings */
+}
+
+nav a:first-child{
+  color: cyan;
+  font-size: 2.5em;
+  display: flex;
+  /* only setting is set display to none in tablet and desktop */
+}
+
+.open-nav{
+  height: 570px;
+}
+
+.logo{
+  position: absolute;
+  width: 200px;
+  /* left 22.5% of the screen width.
+  Handy when the width of the screen is resized and the logo does not overflow the page. */
+  top: 15%;
+  left: 5%;
+  z-index: 40;
+}
+
+.icons{
+  position: static;
+  top: 1%;
+  width: 80px;
+  height: 60px;
+  z-index: 400;
+  display: flex;
+  direction: row;
+  flex-grow: 1;
+}
+
+.home, .cart, .wish, .sign{
+  padding: 10px;
+  width: 70px;
+}
+
+header form{
+  position: absolute;
+  bottom: 20px; /* 20 pixels from the bottom of the header */
+  z-index:200;
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  height: 50px;
+  padding: 2px;
+  background-color: rgba(128, 231, 242, 0.5);
+}
+
+header form button{
+  width: 100px;
+  padding: 5px;
+}
+
+#email{
+  margin-top: 3px;
+  width: 300px;
+}
+
+#enter{
+  margin-top: 3px;
+}
+
+#ScrollTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  position: -webkit-fixed; /* Safari */
+  bottom: 2%; /* Place the button at the bottom of the page */
+  right: 1px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #004bad; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 5px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 40px; /* Increase font size */
+  transition: 0.5s
+}
+
+.content{
+  width: 100%;
+  min-height: 1000px;
+  margin-top: 10%;
+}
+
+.articles{
+  display: flex;
+  align-items: center;
+  width: 95%;
+  min-height: 515px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+.articles article{
+  margin: 10px auto;
+  min-height: 200px;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.articles article img{
+  width: 150%;
+}
+
+.articles article h4, .articles article h5{
+  margin-bottom: 7px;
+}
+
+.articles-bottom{
+  min-width: 90%; /* smaller screens */
+  max-width: 60%; /* bigger screens */
+  margin: 30px auto 0;
+  min-height: 300px;
+  background-color: #3c3669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.articles-bottom iframe{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+footer{
+  width: 100%;
+  height: 67px;
+  text-align: center;
+}
+
+
+input {
+  color: black;
+}
+
+ input[type=text] {
+   width: 85%;
+   height: 85%;
+   padding: 6px;
+   margin: 4px 0 4px;
+   font-size: 17px;
+   float: right;
+   background-color: #white;
+
+   border-top-left-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border:2px solid #4A90E2;
+}
+
+input.inputsearch[type=text] {
+  height: 10%;
+}
+
+#search{
+  text-align: center;
+  padding: 3px;
+  font-size: 30px;
+  height:12%;
+}
+
+/* placeholder text colour */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bdbdbd;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #bdbdbd;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #bdbdbd;
+}
+
+button {
+  float: right;
+  padding: 6px 10px;
+  margin: 4px 16px 4px 0;
+  background: white;
+  font-size: 17px;
+  height: 85%;
+
+  border:2px solid #4A90E2;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  nav, input[type=text], button {
+    float: none;
+  }
+
+  nav, input[type=text], button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+
+  input[type=text] {
+    border: 1px solid white;
+  }
+}

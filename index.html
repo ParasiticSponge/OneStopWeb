@@ -3,16 +3,7 @@
 <script src="scripts/aframe-ar.js"></script>
 <body style="margin: 0px; overflow: hidden">
   <a-scene embedded arjs="sourceType: webcam;">
-    <a-assets>
-      <!-- id=“file name“ src=“file url" -->
-      <a-asset-item
-        id="makery"
-        src="https://cdn.rawgit.com/MakeryINFO/models-for-AR.js/master/makery.gltf"
-      ></a-asset-item>
-    </a-assets>
-
-    <!-- scale values allow you to adjust the file’s display size, gltf-model=“#your file name“ -->
-    <a-entity scale="20 20 20" gltf-model="#makery"></a-entity>
+    <a-box position="0 0.5 0" material="opacity: 0.5;"></a-box>
 
     <a-marker-camera preset="hiro"></a-marker-camera>
   </a-scene>

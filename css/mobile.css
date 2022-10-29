@@ -53,22 +53,22 @@ h2{
 }
 
 h3{
-  font-family: museo-slab, serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 34.5px;
-  margin: 0;
-  margin-bottom: 5px;
-}
-
-h4{
   color: black;
   font-family: museo-slab, serif;
   font-weight: 500;
-  font-style: italic;
+  font-style: normal;
   font-size: 20px;
   padding: 0 15px;
-  margin: 5px 0 30px 0;
+  margin: 5px 0 0px 0;
+}
+
+h4{
+  font-family: museo-slab, serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 15.5px;
+  padding: 0 15px;
+  margin-bottom: 30px;
 }
 
 h5{
@@ -220,6 +220,17 @@ header form button{
   padding: 5px;
 }
 
+.ar_button button{
+  position: absolute;
+  border-radius: 10px;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  width: 20%;
+  height: 9%;
+  top: 90%;
+}
+
 #email{
   margin-top: 3px;
   width: 300px;
@@ -310,13 +321,22 @@ input {
   color: black;
 }
 
+.search_bar{
+  display: flex;
+  flex-direction: row;
+  height:90%;
+}
+
+.inputsearch{
+  flex-shrink: 0;
+}
+
  input[type=text] {
-   width: 85%;
-   height: 85%;
-   padding: 6px;
-   margin: 4px 0 4px;
+   width: 130%;
+   height: 80%;
+   margin: 0px 0 4px;
    font-size: 17px;
-   float: right;
+   float: left;
    background-color: #white;
 
    border-top-left-radius: 15px;
@@ -324,15 +344,12 @@ input {
    border:2px solid #4A90E2;
 }
 
-input.inputsearch[type=text] {
-  height: 10%;
-}
-
 #search{
   text-align: center;
   padding: 3px;
   font-size: 30px;
-  height:12%;
+  height:80%;
+  width: 20%;
 }
 
 /* placeholder text colour */
@@ -363,8 +380,25 @@ button {
 }
 
 @media screen and (max-width: 600px) {
-  nav, input[type=text], button {
-    float: none;
+  header{
+    height:50%;
+  }
+
+  .logo{
+    margin-top: -10%;
+  }
+
+  .icons{
+    position: absolute;
+    left: 5%;
+    top: 45%;
+  }
+
+  .search_bar{
+    position: absolute;
+    top: 180%;
+    left: 5%;
+    width: 400%;
   }
 
   nav, input[type=text], button {

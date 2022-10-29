@@ -18,10 +18,6 @@
     width: 300px;
   }
 
-  h3{
-    font-size: 46px;
-  }
-
   h4{
     font-size: 30px;
   }
@@ -121,7 +117,7 @@
     /* the higher the value, the more it positions up */
     transition: 0.5s;
     display: flex;
-    left: 20%;
+    left: 0%;
   }
 
   .logo:hover{
@@ -137,10 +133,10 @@
 
   .icons{
     position: relative;
-    width: 800px;
-    height: 50px;
+    width: 90%;
+    height: 20%;
     display: flex;
-    left:30%;
+    left:20%;
     top: 40%;
   }
 
@@ -213,21 +209,24 @@
     color: #ff14be;
   }
 
+  .search_bar{
+    width:80%;
+    position: relative;
+    left: -20%;
+    top: 10%;
+  }
+
 .inputsearch{
   flex-shrink: 0;
 }
 
 input[type=text] {
-    width: 30%;
- }
-
- input.inputsearch[type=text] {
-   height: 85%;
+    margin: 4px 0 4px;
+    width: 100%;
  }
 
  #search{
    font-size: 20px;
-   height: 85%;
  }
 
  #email button {

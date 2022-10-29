@@ -257,7 +257,7 @@ so the tag carousel-screen is used to change between the images inside its body,
   margin: 30px 0;
   flex: 2;
   flex-grow: 0; /* flex grow set to 0 so the image has more space priority */
-  margin: 3px 0; /* set the margin so the text can become closer to the image and limit space between */
+  margin: 0px 0px 30px 0px; /* set the margin so the text can become closer to the image and limit space between */
 }
 
 .carousel__item:nth-child(2) .contents img {

@@ -14,10 +14,6 @@
     width: 280px;
   }
 
-  h3{
-    font-size: 46px;
-  }
-
   h4{
     font-size: 30px;
   }
@@ -40,7 +36,7 @@
   }
 
   header{
-    height: 200px;
+    height: 350px;
   }
 
   .banner{
@@ -68,13 +64,21 @@
   .logo{
     left: 5%;
     /* left 5% of the screen width. */
-    top: 15%;
+    top: 10%;
+  }
+
+  .search_bar{
+    width:400%;
+    margin-top: 0;
+    position: absolute;
+    left:-300%;
+    top: 230%;
   }
 
   .icons{
     position: absolute;
-    left: 1%;
-    top: 2%;
+    left: 50%;
+    top: 25%;
   }
 
   #buy_tickets{
@@ -112,16 +116,11 @@
   }
 
 @media screen and (max-width: 1024px){ /* change the way the search button is presented but only apply to tablet mode */
-  input.inputsearch[type=text] {
-    width: 100%;
-  }
   #search{
-    width: 20%;
-    height: 12%;
     display: flex;
     justify-content: center;
-    padding: 15px 0;
     margin: 0 auto;
+    flex-shrink: 0;
   }
 }
   button {
